@@ -41,7 +41,7 @@ jobs:
       run: |
         docker pull registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
         docker run -itd -p 8083:8084 -p 9000:9000 --name halyard  registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
-        sleep 5
+        sleep 60
         docker ps | grep halyard 
         chmod +x getbom.sh
         docker cp getbom.sh halyard:/opt/getbom.sh
