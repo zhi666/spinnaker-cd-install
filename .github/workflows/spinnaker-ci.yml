@@ -7,7 +7,7 @@
 name: Spinnaker Pre Install
 env:
  # SPINNAKER_VERSION: 1.28.7
-  SPINNAKER_VERSION: 1.23.0
+  SPINNAKER_VERSION: 1.22.0
   #REGISTRY_URL: "gcr.io/spinnaker-marketplace/"
   REGISTRY_URL: "us-docker.pkg.dev/spinnaker-community/docker/"
   NEW_REGISTRY_URL: "registry.cn-beijing.aliyuncs.com/spinnaker-cd/"
@@ -39,8 +39,8 @@ jobs:
 #     ## 
     - name: 01-使用Halyard获取bom版本文件
       run: |
-        docker pull registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
-        docker run -itd  -t -p 8083:8084 -p 9000:9000 --name halyard  registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
+        docker pull registry.cn-shanghai.aliyuncs.com/yichenxiu/halyard:1.42.0
+        docker run -itd  -t -p 8083:8084 -p 9000:9000 --name halyard  registry.cn-shanghai.aliyuncs.com/yichenxiu/halyard:1.42.0
         sleep 60
         docker ps | grep halyard 
         chmod +x getbom.sh
